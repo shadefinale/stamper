@@ -42,13 +42,6 @@
             timestamp_data = $(".ytp-time-current").text();
             ZeroClipboard.setData("text/plain", timestamp_data);
           });
-
-          new_clipboard_button.on( "aftercopy", function( event ) {
-            // `this` === `client`
-            // `event.target` === the element that was clicked
-            event.target.style.display = "none";
-            alert("Copied text to clipboard!");
-          });
         });
       });
     });
