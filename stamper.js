@@ -8,4 +8,4 @@ document.getElementsByTagName('head')[0].appendChild(newScript);
 $.getScript("https://cdnjs.cloudflare.com/ajax/libs/zeroclipboard/2.2.0/ZeroClipboard.min.js")
 
 // Insert button
-$.("<button>TEST</button>").insertBefore("#watch-header");
+$("<button>TEST</button>").insertBefore("#watch-header");
