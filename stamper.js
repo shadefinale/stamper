@@ -20,17 +20,17 @@
 
     script.src = url;
     document.getElementsByTagName("head")[0].appendChild(script);
-    }
+  }
 
     loadScript("https://code.jquery.com/jquery-2.1.4.min.js", function () {
       //jQuery loaded
       console.log('jquery loaded');
 
-      //Load Zero query, callback to insert_button afterward.
+      //Load ZeroClipboard, callback to insert_button afterward.
       loadScript("https://cdnjs.cloudflare.com/ajax/libs/zeroclipboard/2.2.0/ZeroClipboard.min.js", function(){
-        console.log('create button with zeroscript?');
+        console.log('ZeroClipboard loaded');
         ZeroClipboard.config({ swfPath: "https://cdnjs.cloudflare.com/ajax/libs/zeroclipboard/2.2.0/ZeroClipboard.swf" });
-        $("#watch-header").before("<button id='clipboard-button' class='yt-uix-button yt-uix-button-size-default yt-uix-button-default yt-uix-button-active'>Copy Timestamp To Clipboard</button>");
+        $("#watch7-headline").before("<button id='clipboard-button' class='yt-uix-button yt-uix-button-size-default yt-uix-button-default yt-uix-button-active'>Copy Timestamp To Clipboard</button>");
 
         // Add functionality to button
         var new_clipboard_button = new ZeroClipboard( document.getElementById("clipboard-button") );
