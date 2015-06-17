@@ -1,7 +1,7 @@
 // Load jquery
 newScript = document.createElement('script');
 newScript.type = 'text/javascript';
-newScript.src = 'http://code.jquery.com/jquery-2.1.4.min.js';
+newScript.src = 'https://code.jquery.com/jquery-2.1.4.min.js';
 document.getElementsByTagName('head')[0].appendChild(newScript);
 
 // Load ZeroClipboard
