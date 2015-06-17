@@ -43,11 +43,11 @@ function insert_button()
         document.getElementsByTagName("head")[0].appendChild(script);
     }
 
-    loadScript("https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js", function () {
+    loadScript("https://code.jquery.com/jquery-2.1.4.min.js", function () {
          //jQuery loaded
          console.log('jquery loaded');
 
          //Load Zero query, callback to insert_button afterward.
-         loadScript("https://code.jquery.com/jquery-2.1.4.min.js", insert_button());
+         loadScript("https://cdnjs.cloudflare.com/ajax/libs/zeroclipboard/2.2.0/ZeroClipboard.min.js", insert_button());
     });
 })();
