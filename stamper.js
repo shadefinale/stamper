@@ -29,6 +29,7 @@
       //Load Zero query, callback to insert_button afterward.
       loadScript("https://cdnjs.cloudflare.com/ajax/libs/zeroclipboard/2.2.0/ZeroClipboard.min.js", function(){
         console.log('create button with zeroscript?');
+        ZeroClipboard.config({ swfPath: "http://YOURSERVER/path/ZeroClipboard.swf" });
         $("#watch-header").before("<button id='clipboard-button' class='yt-uix-button yt-uix-button-size-default yt-uix-button-default yt-uix-button-active'>Copy Timestamp To Clipboard</button>");
 
         // Add functionality to button
@@ -38,16 +39,15 @@
           // alert( "ZeroClipboard SWF is ready!" );
 
           new_clipboard_button.on( "copy", function (event) {
-            var clipboard = event.clipboardData;
             timestamp_data = $(".ytp-time-current").text();
-            clipboard.setData( "test" );
+            ZeroClipboard.setData("text/plain", timestamp_data);
           });
 
           new_clipboard_button.on( "aftercopy", function( event ) {
             // `this` === `client`
             // `event.target` === the element that was clicked
             event.target.style.display = "none";
-            alert("Copied text to clipboard: " + event.data["text/plain"] );
+            alert("Copied text to clipboard!");
           });
         });
       });
