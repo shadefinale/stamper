@@ -1,24 +1,3 @@
-// Insert button
-function insert_button()
-{
-	$("#watch-header").before("<button id='clipboard-button' class='yt-uix-button yt-uix-button-size-default yt-uix-button-default yt-uix-button-active'>Copy Timestamp To Clipboard</button>");
-
-	// Add functionality to button
-	var new_clipboard_button = new ZeroClipboard( document.getElementById("clipboard-button") );
-
-	new_clipboard_button.on( "ready", function( readyEvent ) {
-	  // alert( "ZeroClipboard SWF is ready!" );
-
-	  new_clipboard_button.on( "aftercopy", function( event ) {
-	    // `this` === `client`
-	    // `event.target` === the element that was clicked
-	    event.target.style.display = "none";
-	    alert("Copied text to clipboard: " + event.data["text/plain"] );
-	  } );
-	} );
-};
-
-
 // Load jquery with callback
 (function () {
     function loadScript(url, callback) {
@@ -48,6 +27,23 @@ function insert_button()
          console.log('jquery loaded');
 
          //Load Zero query, callback to insert_button afterward.
-         loadScript("https://cdnjs.cloudflare.com/ajax/libs/zeroclipboard/2.2.0/ZeroClipboard.min.js", insert_button());
+         loadScript("https://cdnjs.cloudflare.com/ajax/libs/zeroclipboard/2.2.0/ZeroClipboard.min.js", function(){
+            console.log('create button with zeroscript?');
+            $("#watch-header").before("<button id='clipboard-button' class='yt-uix-button yt-uix-button-size-default yt-uix-button-default yt-uix-button-active'>Copy Timestamp To Clipboard</button>");
+
+            // Add functionality to button
+            var new_clipboard_button = new ZeroClipboard( document.getElementById("clipboard-button") );
+
+            new_clipboard_button.on( "ready", function( readyEvent ) {
+              // alert( "ZeroClipboard SWF is ready!" );
+
+              new_clipboard_button.on( "aftercopy", function( event ) {
+                // `this` === `client`
+                // `event.target` === the element that was clicked
+                event.target.style.display = "none";
+                alert("Copied text to clipboard: " + event.data["text/plain"] );
+              } );
+            } );
+         });
     });
 })();
