@@ -29,7 +29,7 @@
       //Load Zero query, callback to insert_button afterward.
       loadScript("https://cdnjs.cloudflare.com/ajax/libs/zeroclipboard/2.2.0/ZeroClipboard.min.js", function(){
         console.log('create button with zeroscript?');
-        ZeroClipboard.config({ swfPath: "http://YOURSERVER/path/ZeroClipboard.swf" });
+        ZeroClipboard.config({ swfPath: "https://YOURSERVER/path/ZeroClipboard.swf" });
         $("#watch-header").before("<button id='clipboard-button' class='yt-uix-button yt-uix-button-size-default yt-uix-button-default yt-uix-button-active'>Copy Timestamp To Clipboard</button>");
 
         // Add functionality to button
